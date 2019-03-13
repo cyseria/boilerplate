@@ -3,14 +3,16 @@
  * @author cyseria <xcyseria@gmail.com>
  */
 
-import {observable, action} from 'mobx';
+import {observable, action, configure} from 'mobx';
+
+// 使用严格模式
+configure({
+    enforceActions: 'always'
+});
+
 class LoginStore {
-    @observable username;
-    @observable password;
-    constructor() {
-        this.username = 'admin';
-        this.password = '12345';
-    }
+    @observable username = 'admin';
+    @observable password = '12345';
     @action changeUsername = value => {
         this.username = value;
     }

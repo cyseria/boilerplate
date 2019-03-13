@@ -1,5 +1,13 @@
 # webpack3-mobx-simple-page
 
+## introduce
+
+* react
+* react-router
+* mobx
+
+* webpack4, babel7
+
 ## dev
 
 ```bash

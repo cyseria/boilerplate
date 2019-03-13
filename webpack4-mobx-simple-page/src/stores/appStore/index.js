@@ -3,18 +3,35 @@
  * @author cyseria <xcyseria@gmail.com>
  */
 
-import {observable, action, runInAction} from 'mobx';
+import {
+    observable,
+    action,
+    runInAction,
+    computed,
+    configure
+} from 'mobx';
+
+// 使用严格模式
+configure({
+    enforceActions: 'always'
+});
 
 class AppStore {
-    @observable timer = 0;
-    @observable topics = [];
-    constructor() {
-        setInterval(() => {
-            this.timer += 1;
-        }, 1000);
+    @observable price = 400;
+    @observable num = 1000;
+
+    @computed get totalVal() {
+        return this.price * this.num;
     }
-    @action resetTimer = () => {
-        this.timer = 0;
+
+    @action
+    buyIn = (num) => {
+        this.num += Number(num);
+    }
+
+    @action
+    sayOut = (num) => {
+        this.num -= Number(num);
     }
 }
 export const appStore = new AppStore();
