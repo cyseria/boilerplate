@@ -13,7 +13,7 @@ function resolve(dir) {
 }
 
 const config = {
-    entry: './src/index.js',
+    entry: './src/pages/home/index.js',
     output: {
         path: path.resolve(__dirname, 'dist'),
         filename: 'js/[name].js',
@@ -104,7 +104,7 @@ const config = {
             }
         }),
         new HtmlWebPackPlugin({
-            template: './src/index.html',
+            template: './src/pages/home/index.html',
             filename: './index.html'
         })
     ]
