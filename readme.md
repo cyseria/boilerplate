@@ -78,6 +78,6 @@ plugins: [
 拥抱 `ts` 大法，拒绝 996。
 
 ## 附加
-* webpack4 配置注意是想
-    * process.env.NODE_ENV 的值不需要再定义，默认是 development（也就是不用 DefinePlugin 了）
+* webpack4 配置注意事项
+    * process.env.NODE_ENV 的值不需要再定义，但是如果前端要引用，definePlugin 还是要有的
 
