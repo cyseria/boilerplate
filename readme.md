@@ -1,4 +1,6 @@
-# 前端基础脚手架
+# 前端基础脚手架 
+
+[![build status](https://img.shields.io/travis/cyseria/boilerplate/master.svg?style=flat-square)](https://travis-ci.org/cyseria/boilerplate)
 
 自己整理的脚手架 & 简单配置记录
 
@@ -14,7 +16,7 @@
     * Topic（react-router 实现多层级路由）
     * Activities（mobx 状态管理）
 
-## [webpack4-mobx-simple-page](https://manyu.site/boilerplate/webpack4-mobx-simple-page/dist/) 
+## [webpack4-mobx-simple-page](https://manyu.site/boilerplate/dist) 
 > 典型的单页面应用，接下来的一些都是以此模版为基础做一些改造的，
 
 

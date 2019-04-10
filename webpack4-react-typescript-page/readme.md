@@ -1,4 +1,4 @@
-# webpack4-mobx-simple-page
+# webpack4-react-typescript-page
 
 ## introduce
 
