@@ -18,7 +18,7 @@ module.exports = {
     output: {
         path: resolve('dist'),
         filename: 'js/[name].js',
-        publicPath: '/'
+        publicPath: devMode ? '/' : './'
     },
     resolve: {
         extensions: ['*', '.js', '.jsx', '.json', '.less', '.css'],

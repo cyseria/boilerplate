@@ -1,0 +1,16 @@
+language: node_js
+node_js:
+  - stable
+
+cache:
+  directories:
+    - "node_modules"
+
+install:
+  - cd webpack4-mobx-simple-page
+  - npm install
+
+script:
+  - cd ..
+  - chmod u+x deploy.sh
+  - bash ./deploy.sh

@@ -5,7 +5,7 @@
 
 import React, {createElement} from 'react';
 import classNames from 'classnames';
-import config from './typeConfig';
+import config from './typeconfig';
 import './index.less';
 
 let Exception;
