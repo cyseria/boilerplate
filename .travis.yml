@@ -9,7 +9,6 @@ cache:
 install:
   - cd webpack4-mobx-simple-page
   - npm install
-  - npm run build
 
 script:
   - chmod u+x deploy.sh
