@@ -9,6 +9,7 @@ cd webpack4-mobx-simple-page
  
 echo "pwd: ${pwd}"
 # 生成静态文件
+npm run dll
 npm run build
 
 git init
