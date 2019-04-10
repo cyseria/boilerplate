@@ -11,5 +11,7 @@ install:
   - npm install
 
 script:
+  - echo ${pwd}
+  - cd ..
   - chmod u+x deploy.sh
   - bash ./deploy.sh
