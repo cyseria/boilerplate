@@ -10,7 +10,7 @@ const path = require('path');
 
 module.exports = merge(webpackBase, {
     mode: 'development',
-    devtool: 'source-map',
+    devtool: 'cheap-module-eval-source-map',
     devServer: {
         inline: true, // 打包后加入一个websocket客户端
         hot: true, // 热加载
@@ -21,6 +21,6 @@ module.exports = merge(webpackBase, {
     },
     plugins: [
         new webpack.HotModuleReplacementPlugin(),
-        new webpack.NamedModulesPlugin() // 用户名替代id
+        new webpack.NamedModulesPlugin() // 当开启 HMR 的时候使用该插件会显示模块的相对路径
     ]
 });

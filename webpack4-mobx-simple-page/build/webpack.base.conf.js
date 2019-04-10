@@ -9,18 +9,16 @@ const HtmlWebPackPlugin = require('html-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const devMode = process.env.NODE_ENV !== 'production';
 
-console.log('devMode', devMode);
-
 function resolve(dir) {
-    return path.join(__dirname, dir);
+    return path.join(__dirname, '..', dir);
 }
 
 module.exports = {
     entry: './src/index.js',
     output: {
-        path: path.resolve(__dirname, 'dist'),
+        path: resolve('dist'),
         filename: 'js/[name].js',
-        publicPath: './'
+        publicPath: '/'
     },
     resolve: {
         extensions: ['*', '.js', '.jsx', '.json', '.less', '.css'],
@@ -69,13 +67,13 @@ module.exports = {
                 use: [
                     devMode ? 'style-loader' : MiniCssExtractPlugin.loader,
                     {
-                        loader: 'css-loader'
+                        loader: 'css-loader',
+                        options: {importLoaders: 1}
                     },
                     {
                         loader: 'postcss-loader',
                         options: {
                             plugins: [
-                                // require('postcss-import'),
                                 require('autoprefixer')
                             ]
                         }
@@ -97,34 +95,10 @@ module.exports = {
             }
         ]
     },
-    optimization: {
-        sideEffects: false,
-        splitChunks: {
-            chunks: 'all',
-            minSize: 30000,
-            minChunks: 1,
-            cacheGroups: {
-                // 这里开始设置缓存的 chunks
-                vendors: {
-                    name: 'common',
-                    test: /node_modules/,
-                    chunks: 'initial',
-                    priority: -10,
-                    enforce: true
-                },
-                styles: {
-                    name: 'styles',
-                    test: /(\.less|\.css)$/,
-                    chunks: 'all',
-                    enforce: true
-                }
-            }
-        }
-    },
     plugins: [
         new webpack.DllReferencePlugin({
-            context: path.join(__dirname, 'src'),
-            manifest: path.resolve(__dirname, '../dll', 'manifest.json')
+            context: resolve('src'),
+            manifest: resolve('/dll/manifest.json')
         }),
         new webpack.DefinePlugin({
             'process.env': {
@@ -132,7 +106,7 @@ module.exports = {
             }
         }),
         new HtmlWebPackPlugin({
-            template: './src/index.html',
+            template: resolve('src/index.html'),
             filename: './index.html'
         })
     ]
