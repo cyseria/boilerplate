@@ -4,7 +4,7 @@
   "description": "a simple boilerplate",
   "main": "index.js",
   "scripts": {
-    "dll": "rimraf dll && webpack --config webpack.dll.config.js --mode development",
+    "dll": "rimraf dll && webpack --config build/webpack.dll.config.js --mode development",
     "dev": "webpack-dev-server --progress --config build/webpack.dev.conf.js --open",
     "build": "npm run clean && NODE_ENV=production webpack --config build/webpack.prod.conf.js",
     "clean": "rimraf dist"
