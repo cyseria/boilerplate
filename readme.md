@@ -82,4 +82,3 @@ plugins: [
 ## 附加
 * webpack4 配置注意事项
     * process.env.NODE_ENV 的值不需要再定义，但是如果前端要引用，definePlugin 还是要有的
-
