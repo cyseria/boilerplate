@@ -50,7 +50,8 @@ exports.getHtmlWebpackPlugins = () => {
         const config = {
             filename: pathname + '.html',
             template: htmlTemplate,
-            chunks: ['manifest', 'vendor', pathname]
+            chunks: ['manifest', 'vendor', pathname],
+            hash: true
         };
         return new HtmlWebPackPlugin(config);
     });

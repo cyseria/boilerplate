@@ -19,7 +19,7 @@ npm run dll
 npm run dev
 ```
 
-the broswer will open at `localhost:9000`
+the broswer will open at `http://localhost:9000/home/index.html`
 
 ## build
 

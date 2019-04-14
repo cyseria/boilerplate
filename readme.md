@@ -69,9 +69,14 @@ plugins: [
 ]
 ```
 
-[基础更改参考](https://github.com/cyseria/boilerplate/commit/54e2d97dbc81c671c6779c74b5c0ae58aa19508c)
+[基础更改变更历史](https://github.com/cyseria/boilerplate/commit/54e2d97dbc81c671c6779c74b5c0ae58aa19508c)
 
-但是当页面多了改起来还是很麻烦的，通常写点小函数自动生成，具体可直接参照提交
+但是当页面多了改起来还是很麻烦的，通常写点小函数自动生成，具体可直接参照Demo [变更历史](https://github.com/cyseria/boilerplate/commit/38cf1e80d6fe9f30689dabac1b7c1332bb934574)
+
+* 入口文件为 `src/pages/*/index.js`，
+* 加载的 `html` 默认为 `src/public/index.html`，页面中可以自行覆盖，需要添加的文件为 `src/pages/*/index.html`
+* 如需更改路径主要关注 `build/utils/index` 文件
+* 页面打开的路径为 `http://localhost:9000/xx/index.html`
 
 ## webpack4-mobx-antd-page (Ant Design 引入)
 第三方库的引入
