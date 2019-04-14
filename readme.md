@@ -78,11 +78,6 @@ plugins: [
 * 如需更改路径主要关注 `build/utils/index` 文件
 * 页面打开的路径为 `http://localhost:9000/xx/index.html`
 
-## webpack4-mobx-antd-page (Ant Design 引入)
-第三方库的引入
-1. 官方支持 react 版的，直接 `import`，antd 这里是因为有一些小坑做特殊说明
-2. 需要全局注入的，比如 jquery
-
 ## webpack4-react-typescript-page (typescript)
 拥抱 `ts` 大法，拒绝 996。
 主要是对于 `.ts & .tsx` 文件需要添加 `ts-loader`，`babel` 再加上 `.ts` 的后缀即可。
@@ -128,6 +123,6 @@ module.exports = {
 Demo 基于 `webpack4-mobx-antd-page` 修改完成，如果需要单页应用，可针对 `webpack4-mobx-simple-page` 进行稍微修改
 简单起见只保留了 `home` 目录
 
-## 附加
-* webpack4 配置注意事项
-    * process.env.NODE_ENV 的值不需要再定义，但是如果前端要引用，definePlugin 还是要有的
+
+## TODO
+- [ ] 第三方库的引入
