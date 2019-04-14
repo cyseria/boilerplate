@@ -3,8 +3,8 @@
  * @author cyseria <xcyseria@gmail.com>
  */
 
-import React from 'react';
-import Exception from 'components/Exception/index';
+import React from './node_modules/react';
+import Exception from './node_modules/components/Exception/index';
 import './index.less';
 
 export default () => (
