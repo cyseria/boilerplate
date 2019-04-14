@@ -3,9 +3,9 @@
  * @author Cyseria <xcyseria@gmail.com>
  */
 
+const {getMultiEntry, getHtmlWebpackPlugins} = require('./utils');
 const webpack = require('webpack');
 const path = require('path');
-const HtmlWebPackPlugin = require('html-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const devMode = process.env.NODE_ENV !== 'production';
 
@@ -13,12 +13,11 @@ function resolve(dir) {
     return path.join(__dirname, '..', dir);
 }
 
+
+const entries = getMultiEntry('./src/pages/*/index.js'); // 获得入口js文件
+const htmlWebpackPlugins = getHtmlWebpackPlugins();
 module.exports = {
-    entry: {
-        home: './src/pages/home/index.js',
-        activities: './src/pages/activities/index.js',
-        topic: './src/pages/topic/index.js'
-    },
+    entry: entries,
     output: {
         path: resolve('dist'),
         filename: 'js/[name].js',
@@ -109,17 +108,6 @@ module.exports = {
                 NODE_ENV: JSON.stringify(process.env.NODE_ENV)
             }
         }),
-        new HtmlWebPackPlugin({
-            template: resolve('src/index.html'),
-            filename: './home.html'
-        }),
-        new HtmlWebPackPlugin({
-            template: resolve('src/index.html'),
-            filename: './activities.html'
-        }),
-        new HtmlWebPackPlugin({
-            template: resolve('src/index.html'),
-            filename: './topic.html'
-        })
+        ...htmlWebpackPlugins
     ]
 };

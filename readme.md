@@ -69,7 +69,9 @@ plugins: [
 ]
 ```
 
-但是当页面多了改起来还是很麻烦的，通常写点小函数自动生成，具体可直接参照 demo
+[基础更改参考](https://github.com/cyseria/boilerplate/commit/54e2d97dbc81c671c6779c74b5c0ae58aa19508c)
+
+但是当页面多了改起来还是很麻烦的，通常写点小函数自动生成，具体可直接参照提交
 
 ## webpack4-mobx-antd-page (Ant Design 引入)
 第三方库的引入

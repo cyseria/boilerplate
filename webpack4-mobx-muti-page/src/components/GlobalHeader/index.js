@@ -11,9 +11,9 @@ export default class GlobalHeader extends Component {
     render() {
         return (
             <header className='nav'>
-                <a href='/home.html'>主页</a>
-                <a href='/activities.html'>动态</a>
-                <a href='/topic.html'>话题</a>
+                <a href='/home/index.html'>主页</a>
+                <a href='/activities/index.html'>动态</a>
+                <a href='/topic/index.html'>话题</a>
             </header>
         );
     }
