@@ -14,7 +14,11 @@ function resolve(dir) {
 }
 
 module.exports = {
-    entry: './src/index.js',
+    entry: {
+        home: './src/pages/home/index.js',
+        activities: './src/pages/activities/index.js',
+        topic: './src/pages/topic/index.js'
+    },
     output: {
         path: resolve('dist'),
         filename: 'js/[name].js',
@@ -107,7 +111,15 @@ module.exports = {
         }),
         new HtmlWebPackPlugin({
             template: resolve('src/index.html'),
-            filename: './index.html'
+            filename: './home.html'
+        }),
+        new HtmlWebPackPlugin({
+            template: resolve('src/index.html'),
+            filename: './activities.html'
+        }),
+        new HtmlWebPackPlugin({
+            template: resolve('src/index.html'),
+            filename: './topic.html'
         })
     ]
 };
