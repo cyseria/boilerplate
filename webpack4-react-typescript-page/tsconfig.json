@@ -1,0 +1,19 @@
+{
+    "compilerOptions": {
+        "module": "esnext",
+        "moduleResolution": "node",
+        "outDir": "./dist/",
+        "noImplicitAny": true,
+        "target": "es5",
+        "jsx": "react",
+        "sourceMap": true,
+        "lib": ["dom", "es5", "es6", "es7", "scripthost"],
+        "emitDecoratorMetadata": true,
+        "experimentalDecorators": true,
+        "skipLibCheck": true,
+        "strict": true,
+        "allowJs": true
+    },
+    "include": ["./src"],
+    "exclude": ["node_modules", "build"]
+}

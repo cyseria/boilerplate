@@ -13,7 +13,6 @@ function resolve(dir) {
     return path.join(__dirname, '..', dir);
 }
 
-
 const entries = getMultiEntry('./src/pages/*/index.js'); // 获得入口js文件
 const htmlWebpackPlugins = getHtmlWebpackPlugins();
 module.exports = {
@@ -24,7 +23,7 @@ module.exports = {
         publicPath: devMode ? '/' : './'
     },
     resolve: {
-        extensions: ['*', '.js', '.jsx', '.json', '.less', '.css'],
+        extensions: ['.js', '.ts', '.tsx'],
         alias: {
             '@': resolve('src'),
             assets: resolve('src/assets'),
@@ -42,6 +41,22 @@ module.exports = {
                 use: {
                     loader: 'babel-loader'
                 }
+            },
+            {
+                test: /\.(ts|tsx)?$/,
+                exclude: /node_modules/,
+                use: [
+                    {
+                        loader: 'babel-loader?cacheDirectory'
+                    },
+                    {
+                        loader: 'ts-loader',
+                        options: {
+                            transpileOnly: true,
+                            experimentalWatchApi: true
+                        }
+                    }
+                ]
             },
             {
                 test: /\.html$/,
@@ -76,9 +91,7 @@ module.exports = {
                     {
                         loader: 'postcss-loader',
                         options: {
-                            plugins: [
-                                require('autoprefixer')
-                            ]
+                            plugins: [require('autoprefixer')]
                         }
                     },
                     {

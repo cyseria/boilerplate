@@ -85,6 +85,48 @@ plugins: [
 
 ## webpack4-react-typescript-page (typescript)
 拥抱 `ts` 大法，拒绝 996。
+主要是对于 `.ts & .tsx` 文件需要添加 `ts-loader`，`babel` 再加上 `.ts` 的后缀即可。
+
+
+```js
+/* webpack.base.js */
+
+// npm install ts-loader --save-dev
+// npm install typescript --save-dev
+// npm install @types/react @types/react-dom --save-dev
+module.exports = {
+    resolve: {
+        extensions: ['.js', '.ts', '.tsx'],
+        ...
+    }
+    module: {
+        rules: [
+            ...
+            {
+                test:  /\.(ts|tsx)?$/,
+                exclude: /node_modules/,//不解析node_modules
+                use: [
+                    {
+                        loader: 'babel-loader?cacheDirectory'
+                    },
+                    {
+                        loader: 'ts-loader',
+                        options: {
+                            transpileOnly: true,
+                            experimentalWatchApi: true
+                        }
+                    }
+                ]
+            }
+            ...
+        ]
+    }
+}
+```
+
+
+Demo 基于 `webpack4-mobx-antd-page` 修改完成，如果需要单页应用，可针对 `webpack4-mobx-simple-page` 进行稍微修改
+简单起见只保留了 `home` 目录
 
 ## 附加
 * webpack4 配置注意事项
