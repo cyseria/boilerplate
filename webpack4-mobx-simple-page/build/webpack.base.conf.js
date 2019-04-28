@@ -100,11 +100,8 @@ module.exports = {
             context: resolve('src'),
             manifest: resolve('/dll/manifest.json')
         }),
-        new webpack.DefinePlugin({
-            'process.env': {
-                NODE_ENV: JSON.stringify(process.env.NODE_ENV)
-            }
-        }),
+        // 指定 mode 会自动地配置 DefinePlugin -> process.env.NODE_ENV
+        new webpack.DefinePlugin(),
         new HtmlWebPackPlugin({
             template: resolve('src/index.html'),
             filename: './index.html'
