@@ -96,12 +96,8 @@ module.exports = {
         ]
     },
     plugins: [
-        new webpack.DllReferencePlugin({
-            context: resolve('src'),
-            manifest: resolve('/dll/manifest.json')
-        }),
         // 指定 mode 会自动地配置 DefinePlugin -> process.env.NODE_ENV
-        new webpack.DefinePlugin(),
+        // new webpack.DefinePlugin(),
         new HtmlWebPackPlugin({
             template: resolve('src/index.html'),
             filename: './index.html'

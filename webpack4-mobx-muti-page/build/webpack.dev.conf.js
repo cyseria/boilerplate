@@ -20,6 +20,10 @@ module.exports = merge(webpackBase, {
         compress: true // 开发服务器是否启动gzip等压缩
     },
     plugins: [
+        new webpack.DllReferencePlugin({
+            context: path.join(__dirname, '../src'),
+            manifest: path.join(__dirname, '../dll/manifest.json')
+        }),
         new webpack.HotModuleReplacementPlugin(),
         new webpack.NamedModulesPlugin() // 当开启 HMR 的时候使用该插件会显示模块的相对路径
     ]

@@ -112,11 +112,7 @@ module.exports = {
         ]
     },
     plugins: [
-        new webpack.DllReferencePlugin({
-            context: resolve('src'),
-            manifest: resolve('/dll/manifest.json')
-        }),
-        new webpack.DefinePlugin(),
+        // new webpack.DefinePlugin(),
         ...htmlWebpackPlugins
     ]
 };
