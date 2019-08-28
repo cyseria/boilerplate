@@ -4,12 +4,13 @@
  */
 
 import * as React from 'react';
+import './index.less';
 
-export default class Home extends React.Component<any, any> {
+export default class Home extends React.Component {
     render() {
         return (
             <div className='content'>
-                <h1>Home</h1>
+                <h1 styleName="test">Home</h1>
                 <div>
                     <p>
                         this is a simple demo to use <b>react</b> and{' '}
